@@ -163,18 +163,17 @@ function getSkillImage(id) {
 function getSkillName(skill) {
   const s = getSkill(skill.id);
 
-  if (s != null) {
-    if ('display' in s) return s.display;
-  }
+  if (s != null && 'display' in s) return s.display;
   return skill.name;
 }
 
 function skillHasIcon(s) {
-    if (s.name.startsWith("Basic Attack") || s?.display?.startsWith("Basic Attack") || !(s?.icon ?? true))
-      return false;
-    return true;
-  }
-  function getSkill(id) {
-    return skills.find((k) => k.id == id);
+  return !(s.name.startsWith("Basic Attack")
+    || s?.display?.startsWith("Basic Attack")
+    || !(s?.icon ?? true))
+}
+
+function getSkill(id) {
+  return skills.find((k) => k.id == id);
 }
 </script>
