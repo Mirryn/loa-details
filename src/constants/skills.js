@@ -2380,7 +2380,6 @@ export const skills = [
   {
     id: 25035,
     name: "Level 1",
-    display: "Surge",
     class: "Deathblade",
     level: 0,
   },
