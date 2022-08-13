@@ -64,11 +64,7 @@
       "
       class="text-center"
     >
-      {{
-        ((player.hits.frontAttack / player.hits.totalHitsWithFa) * 100).toFixed(
-          1
-        )
-      }}
+      {{ ((player.damageWithFa / player.damageDealt) * 100).toFixed(1) }}
       <span class="ex">%</span>
     </td>
     <td
@@ -78,11 +74,7 @@
       "
       class="text-center"
     >
-      {{
-        ((player.hits.backAttack / player.hits.totalHitsWithBa) * 100).toFixed(
-          1
-        )
-      }}
+      {{ ((player.damageWithBa / player.damageDealt) * 100).toFixed(1) }}
       <span class="ex">%</span>
     </td>
     <td

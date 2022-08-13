@@ -323,6 +323,8 @@ function sortEntities() {
 
     let totalHitsWithBa = 0,
       totalHitsWithFa = 0;
+    entity.damageWithBa = 0;
+    entity.damageWithFa = 0;
 
     for (const skill of Object.values(entity.skills)) {
       if (skill.hits.backAttack / skill.hits.total >= 0.07)
@@ -330,6 +332,9 @@ function sortEntities() {
 
       if (skill.hits.frontAttack / skill.hits.total >= 0.07)
         totalHitsWithFa += skill.hits.total;
+
+      entity.damageWithBa += skill.damageWithBa;
+      entity.damageWithFa += skill.damageWithFa;
     }
 
     entity.hits.totalHitsWithBa = totalHitsWithBa > 0 ? totalHitsWithBa : 1;
